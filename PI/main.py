@@ -1,12 +1,23 @@
+import numpy as np
+from decimal import *
 
-digit = 0
-while ((digit >= 8) or (digit < 1)):
-	digit = int(input("Enter number of decimal places: "))
-	if digit.isdigit():
+# **Find PI to the Nth Digit** - 
 
-	if digit >= 8 or digit < 1:
-		print ("Please only enter a number between 1 and 8 (inclusive)\n")
+# Enter a number and have the program generate &pi; 
+number = input("Enter number: ")
+limits = 1
+while(limits):
+       while(not number.isdigit()):
+              print("Please enter a number.")
+              number = input("Enter number: ")
+       number1 = int(number)
+       if (number1 >= 1 and number1 <= 48):
+              limits = 0
+       else:
+              print("Enter a number between 1-48 (inclusive).")
+              number = 'a'
+getcontext().prec = number1+1
+print(f"The number pi up to {number1} decimal places is: {Decimal(np.pi)/Decimal(1)}.")
 
 
 
-print(f"So you want up to {digit} decimal places.\n")
